@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../myWebsite.css">
+        <title>school maths page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- The three lines needed to make responsive START next. -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- The three lines needed to make responsive END above. -->
+        
+	<style>
+            canvas {border: 1px solid black;}
+            body {text-align: center;}
+            select {font-size: 20px;}
+            #appDescription {
+                font-size: 150%;
+            }
+        </style>
+	<script>
+            /************/
+            window.onload = function() {
+                    var context = document.getElementById("myCanvas").getContext("2d");
+                    context.fillStyle = "green";
+                    context.fillRect(10, 10, 200, 100);
+                    initialise_schoolMaths();
+            };
+            /************/
+	</script>
+        <script type="text/javascript" src="../myLibrary.js"></script>
+        <!-- --
+        <script type="text/javascript" src="../../myLibraries/myLibrary.js"></script>
+        <!-- -->
+	<script type="text/javascript" src="AddFractions.js"></script>
+    </head>
+    <body>
+        <h1>Adding Fractions</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <div align="right">
+                    <h3>
+                    <a href="https://rippon.tinytake.com/sf/MTYzMzc4NF81NTE5OTc0" id="appDescriptionDemoLink" target="_blank">
+                        <b>click here for Adding Fractions demo</b>
+                    </a>
+                    </h3>
+                    <div id="appDescription">
+                        and/or read the following ... 
+                        <br><br>
+                        This app is intended as a tool to aid the teaching of <b>adding fractions</b>, where the crucial concept is
+                        <b>lowest common denominator</b>.
+                        <br><br>
+                        Fractions cannot be added when they have <b>different</b> denominators. They must
+                        first be expressed in such a way that they share a <b>common</b> denominator.
+                        <br><br>
+                        The user must follow this sequence of steps:
+                        <br><br>
+                        Choose the inputs (numerator and denominator for the fractions to be added).
+                        <br><br>
+                        Click 'Check input' (this includes checking that no improper fractions have been entered)
+                        <br><br>
+                        Click 'Add' to see the result.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <h3>Start by setting your fractionsss.</h3>
+                <div>
+                    fraction 1 numerator
+                    <select>
+                        <option>Select</option>
+                        <option onclick="setFraction1numerator(1);">1</option>
+                        <option onclick="setFraction1numerator(2);">2</option>
+                        <option onclick="setFraction1numerator(3);">3</option>
+                        <option onclick="setFraction1numerator(4);">4</option>
+                        <option onclick="setFraction1numerator(5);">5</option>
+                        <option onclick="setFraction1numerator(6);">6</option>
+                        <option onclick="setFraction1numerator(7);">7</option>
+                        <option onclick="setFraction1numerator(8);">8</option>
+                        <option onclick="setFraction1numerator(9);">9</option>
+                    </select> &nbsp;&nbsp;&nbsp;&nbsp;
+                    fraction 2 numerator
+                    <select>
+                        <option>Select</option>
+                        <option onclick="setFraction2numerator(1);">1</option>
+                        <option onclick="setFraction2numerator(2);">2</option>
+                        <option onclick="setFraction2numerator(3);">3</option>
+                        <option onclick="setFraction2numerator(4);">4</option>
+                        <option onclick="setFraction2numerator(5);">5</option>
+                        <option onclick="setFraction2numerator(6);">6</option>
+                        <option onclick="setFraction2numerator(7);">7</option>
+                        <option onclick="setFraction2numerator(8);">8</option>
+                        <option onclick="setFraction2numerator(9);">9</option>
+                    </select> <br>
+                    fraction 1 denominator
+                    <select>
+                        <option>Select</option>
+                        <option onclick="setFraction1denominator(2);">2</option>
+                        <option onclick="setFraction1denominator(3);">3</option>
+                        <option onclick="setFraction1denominator(4);">4</option>
+                        <option onclick="setFraction1denominator(5);">5</option>
+                        <option onclick="setFraction1denominator(6);">6</option>
+                        <option onclick="setFraction1denominator(7);">7</option>
+                        <option onclick="setFraction1denominator(8);">8</option>
+                        <option onclick="setFraction1denominator(9);">9</option>
+                        <option onclick="setFraction1denominator(10);">10</option>
+                        <option onclick="setFraction1denominator(11);">11</option>
+                        <option onclick="setFraction1denominator(12);">12</option>
+                        <option onclick="setFraction1denominator(13);">13</option>
+                        <option onclick="setFraction1denominator(14);">14</option>
+                    </select> &nbsp;&nbsp;&nbsp;&nbsp;
+                    fraction 2 denominator
+                    <select>
+                        <option>Select</option>
+                        <option onclick="setFraction2denominator(2);">2</option>
+                        <option onclick="setFraction2denominator(3);">3</option>
+                        <option onclick="setFraction2denominator(4);">4</option>
+                        <option onclick="setFraction2denominator(5);">5</option>
+                        <option onclick="setFraction2denominator(6);">6</option>
+                        <option onclick="setFraction2denominator(7);">7</option>
+                        <option onclick="setFraction2denominator(8);">8</option>
+                        <option onclick="setFraction2denominator(9);">9</option>
+                        <option onclick="setFraction2denominator(10);">10</option>
+                        <option onclick="setFraction2denominator(11);">11</option>
+                        <option onclick="setFraction2denominator(12);">12</option>
+                        <option onclick="setFraction2denominator(13);">13</option>
+                        <option onclick="setFraction2denominator(14);">14</option>
+                    </select>
+                    <ul>
+                        <li><button onclick="inputOkay();">Check input</button></li>
+                        <li><button onclick="add();">Add</button></li>
+                    </ul>
+                    <div>
+                        <span id="messageArea1">Message area 1.</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span id="messageArea2">Message area 2.</span>
+                    </div>
+                    <div>
+                        <span id="messageArea3">Message area 3.</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span id="messageArea4">Message area 4.</span>
+                    </div>
+                    <div>
+                        <span id="messageArea5">Message area 5.</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+                <canvas width="600" height="600" id="myCanvas"> </canvas>
+            </div>
+        </div>
+    </body>
+</html>
